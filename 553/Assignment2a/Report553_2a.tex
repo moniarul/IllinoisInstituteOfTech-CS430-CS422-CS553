@@ -1,0 +1,110 @@
+\documentclass[3pt]{article}
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{enumitem}
+\graphicspath{{/Users/diesel/Desktop/}}
+\newcommand{\floor}[1]{\lfloor #1 \rfloor}
+\usepackage{tabu}
+
+\title{Solution to Homework 2a(CS 553)}
+\author{Saptarshi Chatterjee \\
+\texttt{CWID: A20413922}
+}
+
+\begin{document}
+\maketitle
+
+\section{Performance Table (In seconds)}
+
+\setlength{\parskip}{1.2em}
+\setlength{\parindent}{0em}
+
+\begin{tabu} to 0.8\textwidth { | m{6em} | m{8em} | m{8em} | m{8em} | m{8em} | }
+ \hline
+ Experiment & Shared Memory (2GB) & Linux Sort (2GB) & Shared Memory (20GB) & Linux Sort (20GB) \\
+ \hline
+ Compute Time (sec)  & 129.634  & 25  & 1027.842 & 481 \\
+\hline
+ \hline
+ Data Read (GB)  & 2GB  & 2GB & 80GB  & 60GB \\
+\hline
+ \hline
+ Data Write (GB)  & 2GB  & 2GB &  80GB  & 60GB \\
+\hline
+ \hline
+ I/O Throughput (MB/sec)  & 31.59MBPS  & 163.84 MBPS & 79.70MBPS & 170MBPS \\
+\hline
+
+\end{tabu}
+
+\section{Analysis }
+
+
+\setlength{\parskip}{1.2em}
+\setlength{\parindent}{0em}
+
+\textbf{Linux Sort (1VM 2GB)} : Linux performs in-memory sort . So time taken is significantly low. Even lower than 60 sec. Validated the output file linsort2gb.out  using valsort and output is kept at /exports/home/schatterjee/cs553-pa2a/linsort2gb.log. \\
+
+\includegraphics[scale=.6]{lin2gb} \\
+
+\textbf{Linux Sort (1VM 20GB)} : Linux performs in external sort when data to be sorted is more than the available memory. We don't need to pass any extra params for this. Following image shows the internal created files \\
+\includegraphics[scale=.6]{lif} \\
+
+Total time taken \\
+\includegraphics[scale=.6]{lin20gb}
+
+\textbf{Shared Memory (1VM 2GB)} : \\
+
+\includegraphics[scale=.6]{imp}
+
+\begin{itemize}
+\item Performed an In-memory parallel Merge sort for this.
+\item Broken data into 8 equal part in parallel, and performed Java Collection.sort on all these chunks.
+\item  Stored them in a shared HashMap. Then performed 2 way merge on pair 2 chunks in a hierarchical way. 
+\item  The final output is stored in a file /tmp/op2GB and then ran valsort to validate the output
+\item  output is stored in  /exports/home/schatterjee/cs553-pa2a/mysort2GB.log
+\end{itemize}
+
+Complexity = Braking the input into chunk + Sorting each input chunk + merging the chunks   \\
+Complexity = O(n) + O(n log n) + O(n) = O(n log n) \\
+
+Though the program ran in 3 level of hierarchy  ($log_2 8$) . all the inter mediate operations are in memory so,  Total data read = Total data Write = 2GB. \\
+
+\includegraphics[scale=.35]{my2gb} \\
+
+\textbf{Shared Memory (1VM 20GB)} : \\
+
+\includegraphics[scale=.6]{pmerge}
+
+\begin{itemize}
+\item Performed an external Merge sort for this.
+\item Broken data into 16 equal part, sorted each part in parallel and wrote to file named op1 to op15, Then performed 2 way merge on pair 2 chunks in a hierarchical way.Like merged op1 with op2, op3 with op4  etc... Then performed merges on the output of the previous phase and continued.
+\item Final output is stored in a file  /tmp/401. and  then ran valsort to validate the output. output is stored in  /exports/home/schatterjee/cs553-pa2a/mysort20GB.log \
+\end{itemize}
+
+Complexity = Braking the input into chunk + Sorting each input chunk + merging the chunks   \\
+Complexity = O(n) + O(n log n) + O(n) = O(n log n)
+
+The program ran into 4 level of hierarchy ($log_2 16$) , hence the final output file name 401. At each level, we read 20 GB of data from the previous iteration from and wrote to new files to be consumed by next iteration. So total data read = total data write =  $20GB \times 4$ = 80 GB. \\
+
+\includegraphics[scale=.5]{my20gb}
+
+\begin{thebibliography} {9}
+\bibitem{solution}
+Parallel Merge sort
+\\\\texttt{$https://www.slideshare.net/GARIMASHAKYA1/parallel-sorting-algorithms$}
+
+\bibitem{hwprev}
+Unix Sort
+\\\texttt{$https://www.computerhope.com/unix/usort.htm$}
+
+
+\bibitem{hwprev}
+In-memory Parallel
+\\\texttt{$http://www.mdpi.com/2073-8994/9/9/176$}
+
+
+ \end{thebibliography}
+
+\end{document}

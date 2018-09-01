@@ -1,0 +1,1 @@
+/usr/bin/g++  -g -O3 -Wall -lpthread -g -Wl,-search_paths_first -Wl,-headerpad_max_install_names  CMakeFiles/UDP.dir/main.cpp.o  -o UDP 

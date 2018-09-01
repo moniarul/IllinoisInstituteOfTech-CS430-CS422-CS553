@@ -1,0 +1,36 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/diesel/Desktop/Assignments&Coursework/553/Pingpong/main.cpp
+pthread.h
+-
+string.h
+-
+sys/time.h
+-
+iostream
+-
+unistd.h
+-
+sys/socket.h
+-
+sys/types.h
+-
+cstring
+-
+netinet/in.h
+-
+netdb.h
+-
+mutex
+-
+tuple
+-
+functional
+-
+

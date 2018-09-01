@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/diesel/Desktop/Assignments&Coursework/553/fresh/frstMissing.cpp
+set
+-
+vector
+-
+iostream
+-
+set
+-
+vector
+-
+iostream
+-
+

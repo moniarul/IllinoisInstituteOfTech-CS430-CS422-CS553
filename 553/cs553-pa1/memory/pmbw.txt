@@ -1,0 +1,29 @@
+RESULT	datetime=2018-03-25 19:08:01	host=bluecompute-5	version=0.6.2	funcname=ScanWrite64PtrSimpleLoop	nthreads=1	areasize=1024	threadsize=1152	testsize=1152	repeats=22405112	testvol=25810689024	testaccess=3226336128	time=1.4914796699886210263	bandwidth=17305424635.252933502	rate=4.6228279101011915329e-10
+Running nthreads=1 factor=25958136952 areasize=2048 thrsize=2176 testsize=2176 repeats=11929291 testvol=25958137216 testaccess=3244767152
+
+
+RESULT	datetime=2018-03-25 19:08:35	host=bluecompute-5	version=0.6.2	funcname=ScanWrite64PtrSimpleLoop	nthreads=1	areasize=1048576	threadsize=1048704	testsize=1048704	repeats=23323	testvol=24458923392	testaccess=3057365424	time=1.5078178999829106033	bandwidth=16221404051.694314957	rate=4.93175558324398243e-10
+Running nthreads=1 factor=24332106077 areasize=1310720 thrsize=1310848 testsize=1310848 repeats=18563 testvol=24333271424 testaccess=3041658928
+
+
+RESULT	datetime=2018-03-25 19:08:56	host=bluecompute-5	version=0.6.2	funcname=ScanWrite64PtrSimpleLoop	nthreads=1	areasize=9437184	threadsize=9437312	testsize=9437312	repeats=2472	testvol=23329035264	testaccess=2916129408	time=1.4637124669970944524	bandwidth=15938263689.084442139	rate=5.0193673263662459282e-10
+Running nthreads=1 factor=23907395533 areasize=10485760 thrsize=10485888 testsize=10485888 repeats=2280 testvol=23907824640 testaccess=2988478080
+run time = 1.54321 -> next test with repeat factor=23238361542
+
+RESULT	datetime=2018-03-25 19:09:21	host=bluecompute-5	version=0.6.2	funcname=ScanWrite64PtrSimpleLoop	nthreads=2	areasize=1024	threadsize=640	testsize=1280	repeats=24263545	testvol=31057337600	testaccess=3882167200	time=1.0431828990112990141	bandwidth=29771708901.128765106	rate=2.6871148131159807458e-10
+Running nthreads=2 factor=22328781675 areasize=2048 thrsize=1152 testsize=2304 repeats=19382623 testvol=44657563392 testaccess=5582195424
+
+RESULT	datetime=2018-03-25 19:09:55	host=bluecompute-5	version=0.6.2	funcname=ScanWrite64PtrSimpleLoop	nthreads=2	areasize=1048576	threadsize=524416	testsize=1048832	repeats=43506	testvol=45630484992	testaccess=5703810624	time=1.5246652099885977805	bandwidth=29928199773.339912415	rate=2.6730642205637819571e-10
+Running nthreads=2 factor=22446149830 areasize=1310720 thrsize=655488 testsize=1310976 repeats=34244 testvol=44893062144 testaccess=5611632768
+
+RESULT	datetime=2018-03-25 19:10:17	host=bluecompute-5	version=0.6.2	funcname=ScanWrite64PtrSimpleLoop	nthreads=2	areasize=10485760	threadsize=5243008	testsize=10486016	repeats=4114	testvol=43139469824	testaccess=5392433728	time=1.4061283280025236309	bandwidth=30679610790.06337738	rate=2.6075950098399123992e-10
+Running nthreads=2 factor=23009708092 areasize=12582912 thrsize=6291584 testsize=12583168 repeats=3658 testvol=46029228544 testaccess=5753653568
+
+RESULT	datetime=2018-03-25 19:12:03	host=bluecompute-5	version=0.6.2	funcname=ScanWrite64PtrSimpleLoop	nthreads=4	areasize=1024	threadsize=384	testsize=1536	repeats=23621361	testvol=36282410496	testaccess=4535301312	time=1.3729295730008743703	bandwidth=26427000488.230354309	rate=3.027206967193615008e-10
+Running nthreads=4 factor=9910125183 areasize=2048 thrsize=640 testsize=2560 repeats=15484571 testvol=39640501760 testaccess=4955062720
+
+RESULT	datetime=2018-03-25 19:12:36	host=bluecompute-5	version=0.6.2	funcname=ScanWrite64PtrSimpleLoop	nthreads=4	areasize=1048576	threadsize=262272	testsize=1049088	repeats=50959	testvol=53460475392	testaccess=6682559424	time=1.5683514190022833645	bandwidth=34087051373.989395142	rate=2.3469322448067516385e-10
+Running nthreads=4 factor=12782644265 areasize=1310720 thrsize=327808 testsize=1311232 repeats=38995 testvol=51131491840 testaccess=6391436480
+
+RESULT	datetime=2018-03-25 19:12:59	host=bluecompute-5	version=0.6.2	funcname=ScanWrite64PtrSimpleLoop	nthreads=4	areasize=10485760	threadsize=2621568	testsize=10486272	repeats=4424	testvol=46391267328	testaccess=5798908416	time=1.510474377020727843	bandwidth=30713044877.664539337	rate=2.6047563932086210392e-10
+Running nthreads=4 factor=11517391829 areasize=12582912 thrsize=3145856 testsize=12583424 repeats=3662 testvol=46080498688 testaccess=5760062336

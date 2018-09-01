@@ -1,0 +1,1 @@
+/usr/bin/g++  -g -Wall -O3 -lpthread -mavx2 -mfma -Wl,-search_paths_first -Wl,-headerpad_max_install_names  CMakeFiles/cpu2.dir/main.cpp.o  -o cpu2 

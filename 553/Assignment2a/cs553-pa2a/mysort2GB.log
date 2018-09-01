@@ -1,0 +1,29 @@
+Note: Mysort2GB.java uses unchecked or unsafe operations.
+Note: Recompile with -Xlint:unchecked for details.
+ Done Writing Thread-0
+ Done Writing Thread-1
+ Done Writing Thread-2
+ Done Writing Thread-3
+ Done Writing Thread-4
+ Done Writing Thread-5
+ Done Writing Thread-6
+ Done Writing Thread-7
+1 Started Merging 2
+3 Started Merging 4
+5 Started Merging 6
+7 Started Merging 8
+5 Done Merging 6
+7 Done Merging 8
+1 Done Merging 2
+3 Done Merging 4
+101 Started Merging 102
+103 Started Merging 104
+103 Done Merging 104
+101 Done Merging 102
+201 Started Merging 202
+201 Done Merging 202
+Time Taken in seconds: 144.947626193
+Records: 20000000
+Checksum: 98923e9cff98ac
+Duplicate keys: 0
+SUCCESS - all records are in order

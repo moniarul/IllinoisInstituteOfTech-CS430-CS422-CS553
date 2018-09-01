@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/diesel/Desktop/Assignments&Coursework/553/cpu2/main.cpp
+pthread.h
+-
+string
+-
+sys/time.h
+-
+iostream
+-
+immintrin.h
+-
+typeinfo
+-
+

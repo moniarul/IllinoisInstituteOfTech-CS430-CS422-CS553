@@ -1,0 +1,35 @@
+\documentclass[12pt]{amsart}
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage[margin=0.4in]{geometry}
+\usepackage{enumitem}
+\newcommand{\floor}[1]{\lfloor #1 \rfloor}
+\begin{document}
+\noindent
+\begin{itemize}
+
+\item Linear regression assumptions (i)Additive assumption $\rightarrow$ Effect of changes in a predictor $X_j$ on the response Y is independent of other predictors. (Solution take intercept of two predictors) (ii)Linear assumption $\rightarrow$ states that the change in the response Y due to change in $X_j$ is constant, regardless of the value of $X_j$ (iii) Error terms, $\epsilon_1$, $\epsilon_2$,\dots,$\epsilon_n$ are uncorrelated.(If we plot error terms there shouldn't be any pattern) (iv) Error terms have a constant variance (heteroscedasticity $\rightarrow$ non-constant variances in the errors, makes funnel shape in residual plot. one possible solution is to transform the response Y using a concave function such as $\log Y$ or $\sqrt Y$)
+\item RSS(ResidualSumOfSquares) = $(y_1 - \hat{\beta_0} - \hat{\beta_1}x_1)^2 + (y_2 - \hat{\beta_0} - \hat{\beta_1}x_2)^2 +  \dots +(y_n - \hat{\beta_0} - \hat{\beta_1}x_n)^2$
+\item RSE (measure of the lack of fit of the model)= $\sqrt{\frac 1 {n-p-1} RSS } = \sqrt{\frac 1 {n-p-1} {\sum\limits_{i=1}^{n} ( y_i - \hat{y_i})^2   }} $
+\item TSS(TotalSumOfSquares)= $ \sum_{i=1}^{n} (y_i - \bar{y})^2 $ , And \dots $ R^2  = \frac {TSS - RSS} {TSS}$
+\item MeanSquaredError (values closer to zero are better)= $ \frac 1 n \sum\limits_{i=1}^{n} ( y_i - \hat{f}(x) )^2 $, $\rightarrow$ $\hat{f}(x_i)$ is the prediction that $\hat{f}$ gives for the $i^{th}$ observation
+\item Standard error $SE(\hat{\beta_0})^2 = \sigma^2 \Bigg[ \frac 1 n + \frac{\bar{x}^2} {\sum_{i=1}^{n} ( x_i - \bar{x})^2} \Bigg] $ and $SE(\hat{\beta_1})^2 = \frac {\sigma^2} {\sum_{i=1}^{n} ( x_i - \bar{x})^2}$
+\item F-Statistics = $\frac {(TSS - RSS) / p} {RSS / (n-p-1)}$ \dots (p predictors,n observations.When n is large,F-statistic just above 1 might provide evidence against $H_0$. If n is small a larger F-statistic is needed to reject $H_0$ )
+\item If Null Hypothesis is correct $E\{TSS - RSS/ p)\} = \sigma^2 $ ,  If linear model assumptions are correct $E\{RSS/(n -p -1)\} = \sigma^2$ , So when there is no relationship between the response and predictors, F-statistic $\approx 1$
+\item Cor(X, Y ) = $\frac {\sum\limits_{i=1}^{n}{(x_i - \bar{x})(y_i - \bar{y})}} 
+{\sqrt{\sum\limits_{i=1}^{n}{(x_i - \bar{x})^2}} \sqrt{\sum\limits_{i=1}^{n}{(y_i - \bar{y})^2}}}$  ~~ \dots In multiple linear regression $Cor(Y, \hat Y)^2 = R^2$
+\item multicollinearity $\rightarrow$ Collinearity can exist between three or more variables even if no pair of variables has a particularly high correlation. Variance inflation factor (VIF) assess multi-collinearity. $VIF(\hat{\beta_j}) = \frac 1 {1 - {R^2_{X_j | X_{-j}}}}$ . VIF $>$ 5 - 10 Suggest strong collinearity.
+\item Degree of freedom = n - k -1 
+\item KNN $ \rightarrow Pr(Y= j | X = x_0) = \frac 1 K \sum\limits_{i \in N_0}^{} I (y_i = j)$ (Given a +ve int  K \& observation $x_0$, KNN classifier first identifies the K points that are closest to $x_0$ (represented by $N_0$), then estimates the conditional probability for class j as the fraction of points in $N_0$ whose response values equal j
+\item KNN $2^{nd}$ form $\hat f(x_0) = \frac 1 k \sum\limits_{x_i \epsilon N_0} y_i $
+ \item SSR(SumOfSquaredDueToRegression) = $ \sum_{i=1}^{n} (\hat{y_i} - \bar{y})^2 $ , SSE(SumOfSquaredDueToError) = $ \sum_{i=1}^{n} (y_i - \hat{y_i})^2 $, $SST = SSR + SSE =  \sum_{i=1}^{n} (y_i - \bar{y})^2 $ and $ R^2  = \frac {SSR} {SST} =$(Proportion of the variation of y being explained by the variation in x)
+ \item HUNT $\rightarrow$ (I) The initial tree contains a single node with class label that has majority of the out come (II) ~~ If ail the records in $D_t$ belong to the same class $y_t$, then t is a leaf node labeled as $y_t$ ~~ (III) Else partition the records into smaller subsets that yields highest Info gain $\Delta_{info} = I(parent) - \sum_{j=1}^k \frac {N(v_j)} n I(v_j)$. N is total records at parent Node, k is number of attributes, $N(v_j)$ is number of records associated with child node $v_j$. I(.) = Impurity of a node = $- \sum_{i=0}^{c-1} p(i|t) \log_2 p(i|t)$ \{ \dots c is number of classes , $p(i|t)$ fraction of records having class i at a node t\} .This algorithm is then recursively applied to each child node.
+ \item GiniIndex $\rightarrow \sum_{i=0}^{c-1} p(i|t)^2$ \{Can be used instead of entropy above \} .Exam-Tan-P160-Sum-prob
+ \item bagging $\rightarrow \hat f(x) = \frac 1 B \sum_{b=1}^B \hat f^{*b}(x)$ \{B = bootstrapped training data sets.$\hat f^{*b}(x)$ = Predicton when model trained on $b^{th}$ dataset, and finally average all the predictions \}
+ \item ConfusionMatrix $\rightarrow$ $Sensitivity = \frac {TruePositive} {TruePositive + FalseNegative}, Specificity = \frac {TrueNegative} {TrueNegative + FalsePositive}$
+ \item Total number of possible association rules id d items = $3^d - 2^{d+1} +1$
+
+
+
+
+ \end{itemize}
+\end{document}

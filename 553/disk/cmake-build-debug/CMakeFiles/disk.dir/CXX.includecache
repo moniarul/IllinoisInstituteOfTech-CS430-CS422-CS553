@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/diesel/Desktop/Assignments&Coursework/553/disk/main.cpp
+pthread.h
+-
+string
+-
+sys/time.h
+-
+iostream
+-
+fstream
+-
+random
+-
+cstdlib
+-
+algorithm
+-
+

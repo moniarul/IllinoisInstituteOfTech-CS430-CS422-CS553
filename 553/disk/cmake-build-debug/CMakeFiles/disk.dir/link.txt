@@ -1,0 +1,1 @@
+/usr/bin/g++  -g -Wall -lpthread -g -Wl,-search_paths_first -Wl,-headerpad_max_install_names  CMakeFiles/disk.dir/main.cpp.o  -o disk 

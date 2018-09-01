@@ -1,0 +1,6 @@
+Shared-memory version of Intel(R) Distribution for LINPACK* Benchmark.
+7                     # number of tests
+30000 35000 40000 45000 50000 55000 60000 # problem sizes
+30008 35000 40016 45008 50000 55016 60000 # leading dimensions
+2 2 1 1 1 1 1 # times to run a test
+4 4 4 1 1 1 1 # alignment values (in KBytes)
